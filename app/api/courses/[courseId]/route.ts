@@ -16,7 +16,7 @@ export async function PATCH(
             return new NextResponse("Unauthorized", { status: 401 })
         }
 
-        const course = await db.course.update({
+        const course = await db.course.updateMany({
             where: {
                 id: courseId,
                 userId
