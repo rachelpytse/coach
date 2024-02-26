@@ -16,7 +16,7 @@ const ChapterIdPage = async ({
 }) => {
     const {userId} = auth()
     if(!userId) {
-        return redirect("/")
+        return redirect("sign-in")
     }
 
     const {
@@ -34,7 +34,7 @@ const ChapterIdPage = async ({
     })
 
     if(!chapter || !course) {
-        return redirect("/")
+        return redirect("sign-in")
     }
 
     const isLocked = !chapter.isFree && !purchase
